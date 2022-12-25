@@ -1,4 +1,7 @@
+# import section
 import pyttsx3
+
+# A function for next work!
 
 
 def talk(text):
