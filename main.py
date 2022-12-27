@@ -1,4 +1,6 @@
 # import section
+import os
+
 import pyttsx3
 import speech_recognition as sr
 import pywhatkit
@@ -25,6 +27,7 @@ try:
         voice = listener.listen(source)
 
         command = listener.recognize_google(voice)
+        # os.system('clear')
         if 'play' in command:
             command = command.replace('play', '')
             print('opening youtube and play ' + command)
@@ -33,7 +36,9 @@ try:
             print('telling about ' + command)
             command = command.replace('tell', '')
             wiki(command)
-
+        else:
+            talk(command)
+            os.system('clear')
 
 except:
     talk('please say something!')
